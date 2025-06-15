@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استراتيجية العلامة التجارية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* متغيرات التصميم */
+        :root {
+            --primary-color: #0071e3;
+            --primary-hover: #005bb5;
+            --background: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-color: #d2d2d7;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --success: #34c759;
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        /* إعادة تعيين وإعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Alexandria', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* تصميم الهيدر */
+        .header {
+            text-align: center;
+            margin: 30px 0 40px;
+            max-width: 700px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #0071e3, #7b68ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* تصميم الكارد الرئيسي */
+        .container {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 850px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        /* تصميم الأقسام */
+        .form-section {
+            padding: 28px 32px;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+        }
+
+        .form-section:hover {
+            background: rgba(0, 113, 227, 0.03);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .section-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 600;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* تصميم حقول الإدخال */
+        .input-field {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+        }
+
+        .input-field::placeholder {
+            color: #a1a1a6;
+        }
+
+        /* تصميم زر الإرسال */
+        .submit-container {
+            padding: 30px;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 850px;
+            margin-bottom: 40px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 113, 227, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* تصميم الفوتر */
+        .footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            padding: 30px 0;
+            max-width: 700px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .footer-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .form-section {
+                padding: 22px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-description {
+                font-size: 1rem;
+            }
+            
+            .input-field {
+                padding: 14px 16px;
+                font-size: 1rem;
+            }
+            
+            .submit-btn {
+                padding: 16px 35px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header {
+                margin: 20px 0 30px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-number {
+                margin-left: 0;
+                margin-bottom: 12px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* رسوم متحركة */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header, .container, .submit-container, .footer {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .container {
+            animation-delay: 0.1s;
+        }
+
+        .submit-container {
+            animation-delay: 0.2s;
+        }
+
+        .footer {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <div class="header">
+        <h1>استراتيجية العلامة التجارية</h1>
+        <p>أجب على الأسئلة التالية لبناء استراتيجية علامة تجارية قوية ومتماسكة تساعدك على التميز في السوق</p>
+    </div>
+
+    <!-- نموذج الأسئلة -->
+    <div class="container">
+        <form action="#" method="POST">
+            <!-- القسم 1 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">من نحن؟ وما هي هويتنا؟</h2>
+                </div>
+                <p class="section-description">ما هو اسم علامتنا التجارية؟ ما هي القيم الأساسية؟ ما هي رسالتنا ورؤيتنا؟</p>
+                <textarea class="input-field" name="identity" placeholder="أدخل تفاصيل هوية علامتك التجارية..."></textarea>
+            </div>
+
+            <!-- القسم 2 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2 class="section-title">من نخدم؟ وما هي احتياجاتهم؟</h2>
+                </div>
+                <p class="section-description">من هو جمهورنا المستهدف؟ ما هي احتياجاتهم وتحدياتهم؟ كيف نلبي هذه الاحتياجات؟</p>
+                <textarea class="input-field" name="target_audience" placeholder="صف جمهورك المستهدف واحتياجاتهم..."></textarea>
+            </div>
+
+            <!-- القسم 3 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2 class="section-title">ما الذي نقدمه؟ وكيف نتميز؟</h2>
+                </div>
+                <p class="section-description">ما هي المنتجات أو الخدمات التي نقدمها؟ كيف نختلف عن منافسينا؟</p>
+                <textarea class="input-field" name="offer_and_differentiation" placeholder="ما الذي يجعلك مختلفاً عن المنافسين؟..."></textarea>
+            </div>
+
+            <!-- القسم 4 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2 class="section-title">كيف نريد أن يُنظر إلينا؟</h2>
+                </div>
+                <p class="section-description">ما هي الصورة التي نريد أن نرسمها في أذهان عملائنا؟ ما هي المشاعر التي نريد أن نثيرها؟</p>
+                <textarea class="input-field" name="perception" placeholder="كيف تريد أن ينظر الجمهور لعلامتك التجارية؟..."></textarea>
+            </div>
+
+            <!-- القسم 5 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2 class="section-title">ما هي نتائجنا المتوقعة؟</h2>
+                </div>
+                <p class="section-description">ما هي الأهداف التي نريد تحقيقها؟ كيف نقيس نجاحنا؟ كيف نعدل استراتيجيتنا؟</p>
+                <textarea class="input-field" name="expected_results" placeholder="ما هي أهدافك وطرق قياس النجاح؟..."></textarea>
+            </div>
+
+            <!-- القسم 6 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h2 class="section-title">كيف نروي قصتنا؟</h2>
+                </div>
+                <p class="section-description">ما هي القصة التي نريد أن نرويها؟ كيف ندمج القصة في تفاعلاتنا؟</p>
+                <textarea class="input-field" name="story" placeholder="كيف تريد سرد قصة علامتك التجارية؟..."></textarea>
+            </div>
+
+            <!-- القسم 7 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">7</div>
+                    <h2 class="section-title">ما هي التحديات والفرص في السوق؟</h2>
+                </div>
+                <p class="section-description">ما هي التحديات التي نواجهها؟ ما هي الفرص التي يمكننا الاستفادة منها؟</p>
+                <textarea class="input-field" name="market_challenges" placeholder="ما هي التحديات والفرص في السوق؟..."></textarea>
+            </div>
+
+            <!-- القسم 8 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">8</div>
+                    <h2 class="section-title">ما هي تجربتنا مع العملاء؟</h2>
+                </div>
+                <p class="section-description">كيف نريد أن يشعر العملاء عند التعامل معنا؟ ما هي التجارب التي نريد أن نقدمها؟</p>
+                <textarea class="input-field" name="customer_experience" placeholder="كيف تريد أن تكون تجربة العملاء؟..."></textarea>
+            </div>
+
+            <!-- القسم 9 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <div class="section-number">9</div>
+                    <h2 class="section-title">ما هي رؤيتنا المستقبلية؟</h2>
+                </div>
+                <p class="section-description">أين نرى علامتنا التجارية بعد 1، 3، 5 سنوات؟ ما هي الأهداف طويلة المدى؟</p>
+                <textarea class="input-field" name="future_vision" placeholder="ما هي رؤيتك المستقبلية لعلامتك التجارية؟..."></textarea>
+            </div>
+        </form>
+    </div>
+
+    <!-- زر الإرسال -->
+    <div class="submit-container">
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            إرسال الإجابات
+        </button>
+    </div>
+
+    <!-- الفوتر -->
+    <div class="footer">
+        <p>© 2023 استراتيجية العلامة التجارية. جميع الحقوق محفوظة.</p>
+        <div class="footer-links">
+            <a href="#" class="footer-link">سياسة الخصوصية</a>
+            <a href="#" class="footer-link">شروط الاستخدام</a>
+            <a href="#" class="footer-link">الدعم الفني</a>
+        </div>
+    </div>
+
+    <script>
+        // إضافة تفاعلات للصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثيرات للحقول عند التركيز
+            const textareas = document.querySelectorAll('.input-field');
+            
+            textareas.forEach(textarea => {
+                textarea.addEventListener('focus', function() {
+                    this.parentElement.style.backgroundColor = 'rgba(0, 113, 227, 0.05)';
+                });
+                
+                textarea.addEventListener('blur', function() {
+                    this.parentElement.style.backgroundColor = '';
+                });
+            });
+            
+            // إضافة رسالة عند النقر على زر الإرسال
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // التحقق من تعبئة الحقول
+                let allFilled = true;
+                textareas.forEach(textarea => {
+                    if (textarea.value.trim() === '') {
+                        allFilled = false;
+                    }
+                });
+                
+                if (allFilled) {
+                    // عرض رسالة النجاح
+                    this.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح!';
+                    this.style.backgroundColor = 'var(--success)';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الإجابات';
+                        this.style.backgroundColor = 'var(--primary-color)';
+                    }, 3000);
+                } else {
+                    // رسالة تنبيه
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-exclamation-circle"></i> يرجى تعبئة جميع الحقول';
+                    this.style.backgroundColor = '#ff3b30';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.backgroundColor = 'var(--primary-color)';
+                    }, 3000);
+                    
+                    // توجيه لأول حقل فارغ
+                    textareas.forEach(textarea => {
+                        if (textarea.value.trim() === '') {
+                            textarea.focus();
+                            return;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
